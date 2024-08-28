@@ -1,3 +1,4 @@
+import path from "path"
 import express from "express"
 import mongoose from "mongoose"
 import dotenv from "dotenv"
@@ -8,9 +9,16 @@ dotenv.config()
 
 const app = express()
 const port = process.env.PORT || 3000
+const __dirname = path.resolve()
 
 app.use(express.json()) // Middleware för att hantera JSON-body requests
-app.use(cors())
+app.use(
+  cors({
+    origin: process.env.CORSURL,
+  })
+)
+
+app.use(express.static(path.join(__dirname, "/frontend/dist")))
 
 // Anslut till MongoDB
 mongoose

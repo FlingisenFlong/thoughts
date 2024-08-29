@@ -4,10 +4,13 @@
   "type": "module",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon ./backend/server.js",
-    "client": "cd frontend && npm run dev",
-    "build": "npm install && cd frontend && npm install && npm run build",
-    "start": "node /backend/server.js"
+    "start": "node ./backend/server.js",
+    "build": "npm install && npm run client-build",
+    "client-install": "cd frontend && npm install",
+    "client-build": "cd frontend && npm install && npm run build",
+    "render-build": "npm run build",
+    "dev": "concurrently \"nodemon ./backend/server.js\" \"npm run client\"",
+    "client": "cd frontend && npm run dev"
   },
   "keywords": [],
   "author": "",

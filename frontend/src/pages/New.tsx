@@ -13,7 +13,7 @@ const New = () => {
     setLoading(true)
     e.preventDefault()
 
-    fetch("http://localhost:5000/api/posts", {
+    fetch("https://thoughts.glowberry.xyz:5000/api/posts", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

@@ -18,7 +18,6 @@ const New = () => {
       headers: {
         "Content-Type": "application/json",
       },
-
       body: JSON.stringify({
         title: title,
         body: body,
@@ -54,24 +53,30 @@ const New = () => {
             type="text"
             placeholder="Title"
             className="input input-bordered input-primary w-full max-w-xs"
-            onChange={(e) => setTitle(e.target.value)}
+            onChange={(e) => {
+              if (e.target.value.length <= 200) {
+                setTitle(e.target.value)
+              }
+            }}
             value={title}
           />
           <br />
           <textarea
-            name=""
-            id=""
             className="textarea textarea-primary resize-none w-80 h-96"
             placeholder="Content"
-            onChange={(e) => setBody(e.target.value)}
+            onChange={(e) => {
+              if (e.target.value.length <= 2000) {
+                setBody(e.target.value)
+              }
+            }}
             value={body}
           ></textarea>
           <br />
-          <button className={`btn btn-primary w-80`} disabled={loading}>
+          <button className="btn btn-primary w-80" disabled={loading}>
             {loading ? (
               <span className="loading loading-infinity loading-md"></span>
             ) : (
-              "publish"
+              "Publish"
             )}
           </button>
         </form>
@@ -79,4 +84,5 @@ const New = () => {
     </>
   )
 }
+
 export default New

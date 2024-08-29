@@ -11,7 +11,7 @@ const Thoughts: React.FC = () => {
   const [posts, setPosts] = useState<Post[]>([])
 
   useEffect(() => {
-    fetch("https://thoughts.glowberry.xyz:5000/api/getthoughts", {
+    fetch("/api/getthoughts", {
       method: "GET",
       headers: {
         "Content-Type": "application/json",

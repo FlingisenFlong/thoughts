@@ -67,6 +67,10 @@ app.get("/api/getthoughts", async (req, res) => {
   }
 })
 
+app.get("*", (req, res) => {
+  res.sendFile(path.resolve(__dirname, "frontend", "dist", "index.html"))
+})
+
 app.listen(port, () => {
   console.log(`Server running on port ${port}`)
 })

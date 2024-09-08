@@ -44,7 +44,7 @@ const New = () => {
         <FaHome className="text-5xl m-4" />
       </div>
       <div>
-        <h1 className="text-3xl pt-8 text-center">New Thought</h1>
+        <h1 className="text-3xl pt-8 text-center font-bold">New Thought</h1>
         <form
           onSubmit={handleSubmit}
           className="w-10/12 mx-auto flex flex-col items-center gap-4 pt-16"

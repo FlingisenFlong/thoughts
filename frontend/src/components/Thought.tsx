@@ -6,7 +6,7 @@ interface ThoughtProps {
 const Thought: React.FC<ThoughtProps> = ({ title, body }) => {
   return (
     <div className="w-56 bg-purple-950 text-white my-5 mx-5 px-5 py-2 rounded-lg">
-      <h2 className="text-2xl text-center">{title}</h2>
+      <h2 className="text-2xl text-center font-bold">{title}</h2>
       <p className="text-center">{body}</p>
     </div>
   )

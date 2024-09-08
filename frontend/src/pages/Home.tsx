@@ -15,7 +15,7 @@ const Home = () => {
         <TfiThought />
         <FaPlus />
       </div>
-      <div className="text-3xl pt-8 text-center">Home</div>
+      <div className="text-3xl pt-8 text-center font-bold">Home</div>
       <Thoughts />
     </div>
   )

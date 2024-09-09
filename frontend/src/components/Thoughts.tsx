@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react"
 import Thought from "./Thought"
 
 interface Post {
-  _id: string // Använd '_id' som nyckel istället för 'id'
+  _id: string
   title: string
   body: string
 }

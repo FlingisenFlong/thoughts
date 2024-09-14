@@ -10,6 +10,11 @@ const New = () => {
   const navigate = useNavigate()
 
   function handleSubmit(e: React.FormEvent) {
+    if (!title || !body) {
+      toast.error("Title and body are required")
+      return
+    }
+
     setLoading(true)
     e.preventDefault()
 
